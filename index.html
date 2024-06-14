@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ana Sayfa</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<style>
+    
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; /* Yatay kaydırma çubuğunu gizler */
+    min-height: 100vh; /* Minimum yükseklik */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; /* Metin rengi beyaz */
+    background: #121212; /* Varsayılan arka plan rengi */
+    position: relative;
+}
+#particles-js {
+    position: fixed; /* Fixed yaparak tüm ekranı kaplamasını sağlar */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.container {
+    z-index: 1;
+    position: relative;
+    width: 80%;
+    max-width: 960px;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 40px; /* Overlap önler */
+    padding-bottom: 20px; /* Sayfanın altında boşluk bırakır */
+}
+h1 {
+    color: #fff;
+    margin-bottom: 30px;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    background: #1F2122;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease-in-out;
+    width: calc(40% - 20px); /* Kart genişliğini küçült */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%; /* Genişlik %80 */
+    max-width: 250px; /* Maksimum genişlik */
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4CAF50; /* Buton rengi */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #45a049; /* Buton hover rengi */
+}
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.social-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: #333;
+}
+.social-link i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+@media (max-width: 1200px) {
+    .card {
+        width: calc(50% - 20px);
+    }
+}
+@media (max-width: 768px) {
+    .card {
+        width: calc(60% - 20px); /* Dikey modda kart genişliği */
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        width: 95%; /* Dar ekranlarda konteyner genişliği */
+    }
+    .card {
+        width: calc(80% - 20px); /* Dar ekranlarda kart genişliği */
+    }
+}
+@media (orientation: landscape) and (max-width: 768px) {
+    .button {
+        width: 60%; /* Yatay modda genişlik %60 */
+        max-width: none; /* Maksimum genişlik sınırını kaldır */
+    }
+}
+
+
+
+</style>
+</head>
+<body>
+<div id="particles-js"></div>
+<div class="container">
+    <h1>Our Templates</h1>
+    <div class="cards">
+        <div class="card">
+            <a href="https://burakbayar.net/cafe2/" class="button">Cafe 2</a>
+        </div>
+        <div class="card">
+            <a href="https://burakbayar.net/cafe3/" class="button">Cafe 3</a>
+        </div>
+        <div class="card">
+            <a href="https://burakbayar.net/doctor/" class="button">Doctor</a>
+        </div>
+        <div class="card">
+            <a href="https://burakbayar.net/web/" class="button">Web</a>
+        </div>
+        <div class="card">
+            <a href="https://burakbayar.net/lawyer/" class="button">Lawyer</a>
+        </div>
+        
+    </div>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/burakbayar/" class="social-link">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://www.instagram.com/bburak.bayar/" class="social-link">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+});
+</script>
+</body>
+</html>
